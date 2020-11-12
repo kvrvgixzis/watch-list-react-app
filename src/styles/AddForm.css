@@ -1,0 +1,46 @@
+.form {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__body {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--card-bg-color);
+  color: var(--headline-color);
+  padding: 20px;
+}
+
+.form__title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.form__inputs {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form__input {
+  font: 600 20.3333px Arial;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid var(--headline-color);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--headline-color) !important;
+}
+
+textarea.form__input {
+  resize: vertical;
+}
