@@ -1,0 +1,74 @@
+.notification {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  width: 20%;
+
+  border: 1px solid #ffeeba !important;
+  border-radius: 5px;
+  color: #856404;
+  background-color: #fff3cd;
+  padding: 20px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  transform-origin: right;
+  -webkit-animation: notify 3s ease-in-out infinite;
+  animation: notify 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes notify {
+  0% {
+    transform: scaleX(0);
+  }
+  10% {
+    transform: scaleX(1);
+  }
+  13% {
+    transform: scale(1.1);
+  }
+  16% {
+    transform: scale(1);
+  }
+  55% {
+    transform: scaleX(1);
+  }
+  65% {
+    transform: scaleX(0.25);
+  }
+  95% {
+    transform: scaleX(0.25);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes notify {
+  0% {
+    transform: scaleX(0);
+  }
+  10% {
+    transform: scaleX(1);
+  }
+  13% {
+    transform: scale(1.1);
+  }
+  16% {
+    transform: scale(1);
+  }
+  55% {
+    transform: scaleX(1);
+  }
+  65% {
+    transform: scaleX(0.25);
+  }
+  95% {
+    transform: scaleX(0.25);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}

@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.link {
+  margin: 0 10px;
+  color: var(--headline-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header__right-pane {
+  display: flex;
+  align-items: center;
+}

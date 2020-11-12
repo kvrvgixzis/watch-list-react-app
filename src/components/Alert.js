@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import '../styles/Alert.css';
 
 export const Alert = () => {
   const message = useSelector((state) => state.app.alert);
@@ -6,7 +7,7 @@ export const Alert = () => {
   if (!message || !message.trim()) return null;
 
   return (
-    <div className="alert alert-warning" role="alert">
+    <div className="notification" role="alert">
       {message}
     </div>
   );

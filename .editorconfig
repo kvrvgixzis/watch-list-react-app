@@ -6,6 +6,6 @@ charset = utf-8
 trim_trailing_whitespace = false
 insert_final_newline = false
 
-[*.{js, ts, json, jsx, html}]
+[*.{js, ts, json, jsx, html, css}]
 indent_size = 2
 quote_type = single
