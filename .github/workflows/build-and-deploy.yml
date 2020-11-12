@@ -1,0 +1,15 @@
+name: build and deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pre build 🔧
+        run: |
+          npm install
+
+      - name: build and deploy 🚀
+        run: |
+          npm run deploy
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
