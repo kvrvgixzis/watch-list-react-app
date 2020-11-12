@@ -1,22 +1,28 @@
 import { showAlert } from './actions/app';
-import { CREATE_POST } from './types';
+import { CREATE_FILM } from './types';
 
-const forbiddenWords = ['fuck', 'spam', 'php'];
+const forbiddenWords = [];
 
-export function forbiddenWordsMiddleware({ dispatch }) {
-  return function (next) {
-    return function (action) {
-      if (action.type === CREATE_POST) {
-        const findedForbiddenWords = forbiddenWords.filter((w) =>
-          action.payload.title.includes(w)
-        );
+export const inputFilter = ({ dispatch }) => (next) => (action) => {
+  if (action.type === CREATE_FILM) {
+    const { title, comment } = action.payload;
 
-        if (findedForbiddenWords.length) {
-          return dispatch(showAlert('Название содержит недопустимые слова'));
-        }
-      }
+    if (!title.trim()) {
+      return dispatch(showAlert('Введите название'));
+    }
 
-      return next(action);
-    };
-  };
-}
+    if (!comment.trim()) {
+      return dispatch(showAlert('Оставьте комментарий'));
+    }
+
+    // const foundForbiddenWords = forbiddenWords.filter(
+    //   (w) => title.includes(w) || comment.includes(w)
+    // );
+
+    // if (foundForbiddenWords.length) {
+    //   return dispatch(showAlert('Статья содержит недопустимые слова'));
+    // }
+  }
+
+  return next(action);
+};
