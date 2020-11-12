@@ -1,7 +1,7 @@
 import { showAlert } from './actions/app';
 import { CREATE_FILM } from './types';
 
-const forbiddenWords = [];
+// const forbiddenWords = [];
 
 export const inputFilter = ({ dispatch }) => (next) => (action) => {
   if (action.type === CREATE_FILM) {
