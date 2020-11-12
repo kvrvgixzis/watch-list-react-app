@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: install and build 🔧
         run: |
+          npm init
           npm install
           npm run build
 
