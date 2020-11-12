@@ -4,12 +4,13 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: pre build 🔧
+      - name: install and build 🔧
         run: |
           npm install
+          npm run build
 
-      - name: build and deploy 🚀
-        run: |
-          npm run deploy
+      - name: deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
