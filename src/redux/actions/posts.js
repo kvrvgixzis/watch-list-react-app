@@ -1,4 +1,5 @@
 import { CREATE_POST, FETCH_POSTS } from '../types';
+import { hideLoader, showAlert, showLoader } from './app';
 
 export function createPost(post) {
   return {
@@ -9,9 +10,15 @@ export function createPost(post) {
 
 export function fetchPosts() {
   return async (dispatch) => {
-    const url = 'https://jsonplaceholder.typicode.com/posts?_limit=10';
-    const response = await fetch(url);
-    const json = await response.json();
-    dispatch({ type: FETCH_POSTS, payload: json });
+    dispatch(showLoader());
+    try {
+      const url = 'https://jsonplaceholder.typicode.com/posts?_limit=10';
+      const response = await fetch(url);
+      const json = await response.json();
+      dispatch({ type: FETCH_POSTS, payload: json });
+    } catch (error) {
+      dispatch(showAlert('Ошибка при загрузке'));
+    }
+    dispatch(hideLoader());
   };
 }

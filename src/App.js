@@ -1,3 +1,4 @@
+import { Alert } from './components/Alert';
 import FetchedPosts from './components/FetchedPosts';
 import PostForm from './components/PostForm';
 import Posts from './components/Posts';
@@ -5,6 +6,7 @@ import Posts from './components/Posts';
 function App() {
   return (
     <div className="container pt-3">
+      <Alert />
       <h1>Learn Redux in React</h1>
       <div className="row">
         <div className="col">

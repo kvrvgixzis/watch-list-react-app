@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { showAlert } from '../redux/actions/app';
 import { createPost } from '../redux/actions/posts';
 
 class PostForm extends React.Component {
@@ -19,7 +20,10 @@ class PostForm extends React.Component {
     const { title } = this.state;
 
     // validate
-    if (!title.trim()) return;
+    if (!title.trim()) {
+      this.props.showAlert('Название поста не может быть пустым');
+      return;
+    }
 
     const id = Date.now().toString();
     const newPost = { title, id };
@@ -58,6 +62,7 @@ class PostForm extends React.Component {
 
 const mapDispatchToProps = {
   createPost,
+  showAlert,
 };
 
 export default connect(null, mapDispatchToProps)(PostForm);
