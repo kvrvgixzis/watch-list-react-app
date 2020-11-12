@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/watch-list-react-app/static/css/main.2bece934.chunk.css",
-    "main.js": "/watch-list-react-app/static/js/main.d40b0ddd.chunk.js",
-    "main.js.map": "/watch-list-react-app/static/js/main.d40b0ddd.chunk.js.map",
+    "main.js": "/watch-list-react-app/static/js/main.bfc0ed60.chunk.js",
+    "main.js.map": "/watch-list-react-app/static/js/main.bfc0ed60.chunk.js.map",
     "runtime-main.js": "/watch-list-react-app/static/js/runtime-main.3744a162.js",
     "runtime-main.js.map": "/watch-list-react-app/static/js/runtime-main.3744a162.js.map",
     "static/js/2.8d4a830b.chunk.js": "/watch-list-react-app/static/js/2.8d4a830b.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.3744a162.js",
     "static/js/2.8d4a830b.chunk.js",
     "static/css/main.2bece934.chunk.css",
-    "static/js/main.d40b0ddd.chunk.js"
+    "static/js/main.bfc0ed60.chunk.js"
   ]
 }
