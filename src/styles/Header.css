@@ -1,6 +1,20 @@
 .header {
   width: 100%;
+}
+
+.dev-block {
+  font-size: smaller;
+  padding: 5px;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(206, 22, 22);
+  color: #fff;
+}
+
+.header__body {
   padding: 20px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
