@@ -1,14 +1,38 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+import { createPost } from '../redux/actions/posts';
 
-export class PostForm extends React.Component {
+class PostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      title: '',
+    };
   }
+
+  clearInput = () => {
+    this.setState({ title: '' });
+  };
 
   formSubmitHandler = (e) => {
     e.preventDefault();
+    this.clearInput();
+
+    const { title } = this.state;
+    if (!title.trim()) return;
+
+    const id = Date.now().toString();
+    const newPost = { title, id };
+
+    this.props.createPost(newPost);
+  };
+
+  changeInputHandler = (e) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   render() {
@@ -16,7 +40,14 @@ export class PostForm extends React.Component {
       <form onSubmit={this.formSubmitHandler}>
         <div className="form-group">
           <label htmlFor="title">Заголовок</label>
-          <input className="form-control" id="title" type="text" />
+          <input
+            className="form-control"
+            id="title"
+            name="title"
+            type="text"
+            value={this.state.title}
+            onChange={this.changeInputHandler}
+          />
         </div>
         <button className="btn btn-success" type="submit">
           Создать
@@ -25,3 +56,9 @@ export class PostForm extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = {
+  createPost,
+};
+
+export default connect(null, mapDispatchToProps)(PostForm);

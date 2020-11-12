@@ -1,10 +1,15 @@
+import { connect } from 'react-redux';
 import { Post } from './Post';
 
-export const Posts = ({ posts }) => {
+const Posts = ({ posts }) => {
   if (!posts.length) {
     return <p className="text-center">Постов нет</p>;
   }
   return posts.map((post) => <Post post={post} />);
 };
 
-export default Posts;
+const mapStateToProps = (state) => ({
+  posts: state.posts.posts,
+});
+
+export default connect(mapStateToProps)(Posts);
