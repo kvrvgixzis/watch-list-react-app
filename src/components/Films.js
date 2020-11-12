@@ -10,7 +10,7 @@ export const Films = () => {
 
   if (loading) return <Loader />;
 
-  if (!films.length) return <div>Постов нет</div>;
+  if (!films.length) return <div>Фильмов нет ¯\_(ツ)_/¯</div>;
 
   return (
     <div className="grid">
