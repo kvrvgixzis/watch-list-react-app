@@ -18,7 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "db": "json-server --watch db.json --host 0.0.0.0 --port 3004"
+    "db": "json-server --watch db.json --host 0.0.0.0 --port 3004",
+    "tmux": "sh dev-tmux.sh"
   },
   "eslintConfig": {
     "extends": [
