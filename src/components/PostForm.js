@@ -5,10 +5,7 @@ import { createPost } from '../redux/actions/posts';
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      title: '',
-    };
+    this.state = { title: '' };
   }
 
   clearInput = () => {
@@ -20,6 +17,8 @@ class PostForm extends React.Component {
     this.clearInput();
 
     const { title } = this.state;
+
+    // validate
     if (!title.trim()) return;
 
     const id = Date.now().toString();
@@ -28,10 +27,10 @@ class PostForm extends React.Component {
     this.props.createPost(newPost);
   };
 
-  changeInputHandler = (e) => {
+  changeInputHandler = ({ target: input }) => {
     this.setState((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value,
+      [input.name]: input.value,
     }));
   };
 
