@@ -16,7 +16,7 @@
   height: 100%;
   border-radius: 10px;
   opacity: 1;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   transform-origin: bottom left;
 }
 
@@ -39,7 +39,7 @@
 
 .card__heading {
   color: var(--headline-color);
-  font-size: 30px;
+  font-size: 20px;
   margin: 5px 0;
 }
 
@@ -59,4 +59,10 @@
 
 .card__about strong {
   color: var(--headline-color);
+}
+
+.card__open {
+  position: absolute;
+  bottom: 10px;
+  width: 50%;
 }

@@ -1,0 +1,27 @@
+.film-page {
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.film-page__about {
+  display: flex;
+}
+
+@media (max-width: 800px) {
+  .film-page__about {
+    flex-direction: column;
+  }
+
+  .film-page__about img {
+    margin: 0 auto;
+  }
+}
+
+.film-page__about img {
+  display: block;
+  max-width: 300px;
+}
+
+.film-page__about > div {
+  padding: 0 20px;
+}

@@ -1,59 +1,37 @@
 import { useEffect, useState } from 'react';
-
-const API_KEY = 'eeddb6b3c7a58009b97b8dde8b85c32d';
-const POSTER_W = 200;
-const POSTER_H = 400;
-const PLACEHOLDER_SRC = `https://via.placeholder.com/${POSTER_W}x${POSTER_H}?text=Poster+not+found`;
-
-const getFilmData = async (title) => {
-  const filmData = {
-    originalTitle: '',
-    posterUrl: PLACEHOLDER_SRC,
-  };
-
-  if (!title) return filmData;
-
-  title = title.split(' ').join('%20');
-  const url = `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${title}&&language=ru`;
-  const res = await fetch(url);
-  const json = await res.json();
-
-  if (!json?.results?.length) return filmData;
-  const target = json.results[0];
-
-  console.log(`${title}: `, target);
-
-  const posterPath = target.poster_path;
-  filmData.posterUrl = `http://image.tmdb.org/t/p/w500/${posterPath}`;
-  filmData.originalTitle = target.original_title;
-  filmData.overview = target.overview;
-  return filmData;
-};
+import { useHistory } from 'react-router-dom';
+import { getTMDBData } from '../api/TMDB';
+import { Button } from './Button';
 
 export const FilmCard = ({ film }) => {
-  const [filmData, setFilmData] = useState(undefined);
+  const [TMDBData, setTMDBData] = useState(undefined);
+  const history = useHistory();
+
+  const openBtnHandler = () => {
+    history.push(`/film/${film.id}`);
+  };
 
   useEffect(() => {
-    const fetchFilmData = async () => {
-      const filmData = await getFilmData(film.title);
-      setFilmData(filmData);
+    const fetchTMDBData = async () => {
+      const filmData = await getTMDBData(film.title);
+      setTMDBData(filmData);
     };
 
-    fetchFilmData();
+    fetchTMDBData();
   }, [film]);
 
-  if (!filmData) return null;
+  if (!TMDBData) return null;
 
   return (
     <div className="card">
-      <img src={filmData.posterUrl} className="card__poster" alt="poster" />
+      <img src={TMDBData.posterUrl} className="card__poster" alt="poster" />
       <div className="card__about">
         <h3 className="card__heading">{film.title}</h3>
-        <h3 className="card__heading-original">{filmData.originalTitle}</h3>
+        <h3 className="card__heading-original">{TMDBData.originalTitle}</h3>
         <p className="card__type">{film.type}</p>
         <p className="card__overview">
           <strong>Описание: </strong>
-          {filmData.overview}
+          {TMDBData.overview}
         </p>
         <p className="card__comment">
           <strong>Комментарий: </strong>
@@ -63,6 +41,11 @@ export const FilmCard = ({ film }) => {
           <strong>Добавил: </strong>
           {film.added_by}
         </p>
+        <Button
+          className="card__open"
+          clickHandler={openBtnHandler}
+          title="Подробнее"
+        />
       </div>
     </div>
   );

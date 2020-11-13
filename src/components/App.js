@@ -1,13 +1,18 @@
-import { Alert } from './Alert';
 import { Films } from './Films';
-import { AddForm } from './AddForm';
 import { MainLayout } from '../layouts/MainLayout';
+import { Switch, Route } from 'react-router-dom';
+import { FilmPage } from './FilmPage';
 
 const App = () => (
   <MainLayout>
-    <Alert />
-    <AddForm />
-    <Films />
+    <Switch>
+      <Route path="/film/:id">
+        <FilmPage />
+      </Route>
+      <Route path="/">
+        <Films />
+      </Route>
+    </Switch>
   </MainLayout>
 );
 

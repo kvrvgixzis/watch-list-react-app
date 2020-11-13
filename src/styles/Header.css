@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.header a {
+  text-decoration: none;
+  color: var(--headline-color);
+}
+
 .dev-block {
   font-size: smaller;
   padding: 5px;

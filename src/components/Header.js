@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { showAddForm } from '../redux/actions/app';
 import '../styles/Header.css';
 import { Button } from './Button';
@@ -27,7 +28,9 @@ export const Header = () => {
     <header className="header">
       <DevBlock />
       <div className="header__body">
-        <div className="header__title">Что посмотреть?</div>
+        <div className="header__title">
+          <Link to="/">Что посмотреть?</Link>
+        </div>
         <div className="header__right-pane">
           <Button clickHandler={addBtnHandler} title={'Добавить'} />
         </div>

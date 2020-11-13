@@ -37,7 +37,7 @@ export function fetchFilms() {
         dispatch(showAlert('Ошибка при сохранении'));
       }
       const json = await response.json();
-      dispatch({ type: FETCH_FILMS, payload: json });
+      dispatch({ type: FETCH_FILMS, payload: json.reverse() });
     } catch (error) {
       dispatch(showAlert('Ошибка при загрузке'));
     }
