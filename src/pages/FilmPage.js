@@ -1,10 +1,10 @@
+import '../styles/FilmPage.css';
+
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { API_FILMS } from '../api/urls';
 import { getTMDBData } from '../api/TMDB';
-import { Loader } from './Loader';
-
-import '../styles/FilmPage.css';
+import { Loader } from '../components/Loader';
 
 export const FilmPage = () => {
   const [film, setFilm] = useState(undefined);

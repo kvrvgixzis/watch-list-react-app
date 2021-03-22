@@ -1,7 +1,7 @@
-import { Films } from './Films';
+import { FilmsPage } from '../pages/FilmsPage';
 import { MainLayout } from '../layouts/MainLayout';
 import { Switch, Route } from 'react-router-dom';
-import { FilmPage } from './FilmPage';
+import { FilmPage } from '../pages/FilmPage';
 
 const App = () => (
   <MainLayout>
@@ -10,7 +10,7 @@ const App = () => (
         <FilmPage />
       </Route>
       <Route path="/">
-        <Films />
+        <FilmsPage />
       </Route>
     </Switch>
   </MainLayout>

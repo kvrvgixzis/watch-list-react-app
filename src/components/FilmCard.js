@@ -1,3 +1,5 @@
+import '../styles/FilmCard.css';
+
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getTMDBData } from '../api/TMDB';

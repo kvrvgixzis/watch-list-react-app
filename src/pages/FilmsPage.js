@@ -1,10 +1,10 @@
-import { useSelector } from 'react-redux';
-import { Loader } from './Loader';
-import { FilmCard } from './FilmCard';
-import '../styles/Films.css';
-import '../styles/FilmCard.css';
+import '../styles/FilmsPage.css';
 
-export const Films = () => {
+import { useSelector } from 'react-redux';
+import { Loader } from '../components/Loader';
+import { FilmCard } from '../components/FilmCard';
+
+export const FilmsPage = () => {
   const films = useSelector((state) => state.films.films);
   const loading = useSelector((state) => state.app.loading);
 
@@ -20,5 +20,3 @@ export const Films = () => {
     </div>
   );
 };
-
-export default Films;
