@@ -64,5 +64,5 @@
 .card__open {
   position: absolute;
   bottom: 10px;
-  width: 50%;
+  width: 50% !important;
 }
