@@ -10,7 +10,8 @@ import { useWindowScroll } from '../hooks/useWindowScroll';
 export const MainLayout = ({ children }) => {
   const containerRef = useRef();
 
-  const setHeaderFixed = () => {
+  const setHeaderFixed = (st) => {
+    if (st <= 111) return;
     containerRef.current.classList.add('fixed');
   };
 

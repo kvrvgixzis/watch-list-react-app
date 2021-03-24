@@ -15,7 +15,7 @@ export const useWindowScroll = ({
 
   const scrollHandler = () => {
     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-    st > lastScrollTop ? onScrollDown() : onScrollUp();
+    st > lastScrollTop ? onScrollDown(st) : onScrollUp(st);
     lastScrollTop = st <= 0 ? 0 : st;
   };
 

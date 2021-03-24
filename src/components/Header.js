@@ -23,7 +23,8 @@ export const Header = () => {
   const dispatch = useDispatch();
   const headerRef = useRef();
 
-  const setHeaderFixed = () => {
+  const setHeaderFixed = (st) => {
+    if (st <= 111) return;
     headerRef.current.classList.add('fixed');
   };
 
