@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.container.fixed {
+  padding-top: 111px;
+}
+
 main {
   padding: 10px;
   padding-top: 0;
